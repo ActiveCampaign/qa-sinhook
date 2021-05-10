@@ -1,0 +1,14 @@
+version: 2.1
+
+jobs:
+  publish-containers:
+    docker:
+      - image: 602216863712.dkr.ecr.us-east-2.amazonaws.com/deploy-tools:2021-05-05
+    steps:
+      - attach_workspace:
+          at: .
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - run: /scripts/container-build/clean
+      - run: /scripts/container-build/build-container . qa-sinhook
+      - run: /scripts/container-build/publish
