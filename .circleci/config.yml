@@ -10,7 +10,7 @@ jobs:
       - setup_remote_docker:
           docker_layer_caching: true
       - run: /scripts/container-build/clean
-      - run: /scripts/container-build/build-container . qa-sinhook $(/scripts/get-tag)
+      - run: /scripts/container-build/build-container . qa-sinhook $(/scripts/container-build/get-tag)
       - run: /scripts/container-build/publish
 workflows:
   version: 2
