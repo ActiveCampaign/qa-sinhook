@@ -12,3 +12,13 @@ jobs:
       - run: /scripts/container-build/clean
       - run: /scripts/container-build/build-container . qa-sinhook
       - run: /scripts/container-build/publish
+workflows:
+  version: 2
+  continuous-delivery:
+    jobs:
+      - publish-containers:
+          context: dotnet-deploy
+          filters:
+            tags:
+              only:
+                /.*/
