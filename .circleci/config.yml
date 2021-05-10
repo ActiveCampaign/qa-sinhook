@@ -17,3 +17,7 @@ workflows:
     jobs:
       - publish-containers:
           context: dotnet-deploy
+          filters:
+            tags:
+              only:
+                /.*/
