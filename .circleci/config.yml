@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   publish-containers:
     docker:
-      - image: 602216863712.dkr.ecr.us-east-2.amazonaws.com/deploy-tools:2021-05-05
+      - image: 602216863712.dkr.ecr.us-east-2.amazonaws.com/deploy-tools:2022-04-11
     steps:
       - checkout
       - setup_remote_docker:
